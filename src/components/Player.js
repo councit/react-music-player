@@ -40,9 +40,9 @@ const Player = ({
   const skipTrackHandler = (skipSelect) => {
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
     if (skipSelect === "skip-forward") {
-      setCurrentSong(songs[currentIndex + 1]);
+      setCurrentSong(songs[(currentIndex + 1) % songs.length]);
     } else if (skipSelect === "skip-back") {
-      setCurrentSong(songs[currentIndex - 1]);
+      setCurrentSong(songs[(currentIndex - 1) % songs.length]);
     }
   };
 
